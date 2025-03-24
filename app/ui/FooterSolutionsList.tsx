@@ -2,12 +2,19 @@ import { ArrowRight } from "lucide-react";
 
 export default function FooterSolutionsList() {
   const solutions = [
-    { name: "Solar Panels", link: "/solutions/solar-panels" },
-    { name: "Battery Storage", link: "/solutions/battery-storage" },
-    { name: "Solar Water Pumps", link: "/solutions/solar-water-pumps" },
-    { name: "Commercial Solar", link: "/solutions/commercial-solar" },
-    { name: "Residential Solar", link: "/solutions/residential-solar" },
-    { name: "Solar Panel Installation", link: "/solutions/installation" },
+    { name: "Power Metering", link: "/services/power-metering" },
+    {
+      name: "CCTV, Electric Fence and Alarms",
+      link: "/services/cctv-fence-alarm",
+    },
+    { name: "Solar Water Pumps", link: "/services/solar-water-pump" },
+    {
+      name: "Electrical Installaion",
+      link: "/services/electrical-installation",
+    },
+    { name: "Solar Water Heating", link: "/services/solar-water-heating" },
+    { name: "Solar Installation", link: "/services/solar-installation" },
+    { name: "Electrical Design", link: "/services/electrical-design" },
   ];
 
   return (

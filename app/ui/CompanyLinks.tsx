@@ -4,8 +4,8 @@ export default function CompanyLinks() {
   const companyLinks = [
     { name: "About Us", link: "/about" },
     { name: "Our Projects", link: "/projects" },
-    { name: "Testimonials", link: "/testimonials" },
-    { name: "Latest News", link: "/news" },
+
+    { name: "Blog", link: "/Blog" },
   ];
 
   return (

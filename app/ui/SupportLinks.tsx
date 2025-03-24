@@ -4,9 +4,9 @@ import { ArrowRight } from "lucide-react";
 export default function SupportLinks() {
   const supportLinks = [
     { name: "Contact Us", link: "/contact" },
-    { name: "FAQs", link: "/faqs" },
-    { name: "Installation Guide", link: "/installation-guide" },
-    { name: "Maintenance Tips", link: "/maintenance-tips" },
+
+    { name: "Installation Guide", link: "/services/solar-installation" },
+    { name: "Location: Ruiru", link: "/contact" },
   ];
 
   return (

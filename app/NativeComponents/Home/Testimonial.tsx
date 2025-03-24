@@ -1,31 +1,26 @@
 "use client";
 
-
 import { TestimonialCards } from "@/app/ui/TestimonialCards";
 
 export default function Testimonial() {
   return (
-    <section className='bg-foreground w-full py-8 '>
-        <header className="wrapper">
+    <section id="testimonials" className="bg-foreground w-full py-8 ">
+      <header className="wrapper">
         <div className="space-y-4 mb-12">
           <h2 className="headline text-background font-bold flex items-center gap-2">
             <div className="w-1 h-6 bg-primary"></div>
             Customer Stories
           </h2>
-          
+
           <h3 className="title font-semibold bg-gradient-to-r from-background to-primary bg-clip-text text-transparent">
             What our clients say about us.
           </h3>
         </div>
-        </header>
-      
-    <div className="h-[20rem] rounded-md flex flex-col antialiased bg-foreground dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-      <TestimonialCards
-        items={testimonials}
-        direction="right"
-        speed="slow"
-      />
-    </div>
+      </header>
+
+      <div className="h-[20rem] rounded-md flex flex-col antialiased bg-foreground dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+        <TestimonialCards items={testimonials} direction="right" speed="slow" />
+      </div>
     </section>
   );
 }
@@ -44,7 +39,8 @@ const testimonials = [
     title: "Homeowner",
   },
   {
-    quote: "Good customer service and professional in what they do...kudos you guys made me learn a lot of stuff and saved alot of cash..I will strongly recommend you anyday.",
+    quote:
+      "Good customer service and professional in what they do...kudos you guys made me learn a lot of stuff and saved alot of cash..I will strongly recommend you anyday.",
     name: "Pobert Nyandoya",
     title: "Client",
   },

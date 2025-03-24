@@ -86,7 +86,7 @@ const items = [
     alt: "electrical inspector in safety gear conducting an electrical audit. ",
     //header: <Skeleton />,
     icon: <IconPlugConnected className="size-4 text-primary" />,
-    href: "/services/electrical-infrastructure",
+    href: "/services/electrical-installation",
   },
   {
     title: "Solar Water Pump",
