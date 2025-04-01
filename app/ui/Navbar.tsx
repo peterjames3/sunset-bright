@@ -25,7 +25,7 @@ export default function Navbar() {
     { name: "Products", href: "/products" },
     {
       name: "Services",
-      href: "/services",
+      href: "/services/solar-installation",
       submenu: [
         { name: "Power Metering", href: "/services/power-metering" },
         {

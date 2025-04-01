@@ -60,10 +60,6 @@ export default function ContactForm() {
   const templateId = process.env.NEXT_PUBLIC_CONTACTUS_TEMPLATE_ID as string;
   const publicKey = process.env.NEXT_PUBLIC_KEY as string;
 
-  console.log(
-    `services Id: ${serviceId}, Templated Id: ${templateId}, Public Id: ${publicKey}`
-  ); // Debugging
-
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
