@@ -11,16 +11,13 @@ export default function Error({
     console.log(`${error.name}: ${error.message}`);
   }, [error]);
   return (
-    <div className="grid place-content-center h-screen ">
-      <h4 className="text-center font-medium">
-        {error
-          ? `${error.name} : {error.message}`
-          : "An Unknown error occurred"}
-        !
-      </h4>
+    <div className="grid place-content-center h-[42rem] ">
+      <h3 className="text-center font-medium">
+        {error.name}: {error.message}!
+      </h3>
       <button
         type="button"
-        className="mt-4 rounded-md bg-softRed px-4 py-2 text-sm text-white transition-colors hover:bg-orange-600"
+        className="mt-4 font-semibold rounded-md bg-primary px-4 py-2 text-sm hover:cursor-pointer text-foreground transition-colors hover:bg-foreground hover:text-background"
         onClick={() => reset()}
       >
         Try again

@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { X, AlignJustify } from "lucide-react";
-import clsx from 'clsx';
+import clsx from "clsx";
 import SwitchBtn from "./SwitchBtn";
 
 export default function Mobile() {
@@ -13,8 +13,20 @@ export default function Mobile() {
   const Menu = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Products", href: "/products" },
-    { name: "Services", href: "/services" },
+    { name: "Solar Installers", href: "/solarinstallers" },
+    { name: "Power Metering", href: "/services/power-metering" },
+    {
+      name: "CCTV,Electric Fence and Alarms",
+      href: "/services/cctv-fence-alarm",
+    },
+    {
+      name: "Electrical Installation",
+      href: "/services/electrical-installation",
+    },
+    { name: "Solar Water Pump", href: "/services/solar-water-pump" },
+
+    { name: "Solar Water Heating", href: "/services/solar-water-heating" },
+    { name: "Electrical Design", href: "/services/electrical-design" },
     { name: "Projects", href: "/projects" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
@@ -68,10 +80,9 @@ export default function Mobile() {
             </Link>
           ))}
         </div>
-        <div className='w-full flex justify-start items-center px-3'>
-        <SwitchBtn />
+        <div className="w-full flex justify-start items-center px-3">
+          <SwitchBtn />
         </div>
- 
       </div>
     </div>
   );

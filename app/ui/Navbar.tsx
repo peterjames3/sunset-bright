@@ -22,7 +22,7 @@ export default function Navbar() {
   const Menu = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Products", href: "/products" },
+    { name: "Solar Installers", href: "/solarinstallers" },
     {
       name: "Services",
       href: "/services/solar-installation",
@@ -38,7 +38,7 @@ export default function Navbar() {
           href: "/services/electrical-installation",
         },
         { name: "Solar Water Pump", href: "/services/solar-water-pump" },
-        { name: "Solar Installation", href: "/services/solar-installation" },
+        
         { name: "Solar Water Heating", href: "/services/solar-water-heating" },
         { name: "Electrical Design", href: "/services/electrical-design" },
       ],
