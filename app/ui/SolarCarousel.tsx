@@ -1,53 +1,46 @@
-"use client"
-
-import { useState, useEffect, useRef, useCallback } from "react"
-import Image from "next/image"
-
+"use client";
+import { useState, useEffect, useRef, useCallback } from "react";
+import Image from "next/image";
 
 interface CarouselImage {
-  src: string
-  alt: string
+  src: string;
+  alt: string;
 }
 
 interface SolarCarouselProps {
-  images: CarouselImage[]
-  autoPlayInterval?: number
-  backgroundColor?: string
+  images: CarouselImage[];
+  autoPlayInterval?: number;
+  backgroundColor?: string;
 }
 
 export default function SolarCarousel({
   images,
   autoPlayInterval = 5000,
-
 }: SolarCarouselProps) {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [isPaused, setIsPaused] = useState(false)
-  const timerRef = useRef<NodeJS.Timeout | null>(null)
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const goToNext = useCallback(() => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-  }, [images.length])
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  }, [images.length]);
 
-  const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
-  }
-
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index)
-  }
+  const goToSlide = useCallback((index: number) => {
+    setCurrentIndex(index);
+  }, []);
 
   // Handle autoplay
   useEffect(() => {
-    if (!isPaused) {
-      timerRef.current = setInterval(goToNext, autoPlayInterval)
+    if (!isPaused && images.length > 0) {
+      timerRef.current = setInterval(goToNext, autoPlayInterval);
     }
 
     return () => {
       if (timerRef.current) {
-        clearInterval(timerRef.current)
+        clearInterval(timerRef.current);
       }
-    }
-  }, [isPaused, autoPlayInterval, goToNext])
+    };
+  }, [isPaused, autoPlayInterval, goToNext, images.length]);
 
   return (
     <div
@@ -55,10 +48,8 @@ export default function SolarCarousel({
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-  
-
       {/* Foreground image container */}
-      <div className="relative h-[400px] md:h-[650] w-full">
+      <div className="relative h-[400px] md:h-[650px] w-full">
         {images.map((image, index) => (
           <div
             key={index}
@@ -80,11 +71,11 @@ export default function SolarCarousel({
         ))}
       </div>
 
-     
       {/* Pagination dots */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex space-x-2">
         {images.map((_, index) => (
-          <button type='button'
+          <button
+            type="button"
             key={index}
             onClick={() => goToSlide(index)}
             className={`w-2.5 h-2.5 rounded-full transition-colors ${
@@ -95,6 +86,5 @@ export default function SolarCarousel({
         ))}
       </div>
     </div>
-  )
+  );
 }
-
