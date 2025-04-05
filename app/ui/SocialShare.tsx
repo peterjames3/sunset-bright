@@ -16,21 +16,21 @@ import {
 export default function SocialShare({ title }: { title: string }) {
   const [postUrl, setPostUrl] = useState("");
   const [isCopied, setIsCopied] = useState(false);
-  const Url = window.location.href;
+
+  useEffect(() => {
+    const Url = window.location.href;
+    setPostUrl(Url);
+  }, []);
 
   const copyToClipBoard = async () => {
     try {
-      await navigator.clipboard.writeText(Url);
+      await navigator.clipboard.writeText(postUrl);
       setIsCopied(true);
       setTimeout(() => setIsCopied(false), 2000); //resetting  after 2 seconds
     } catch (err) {
       console.error("failed to copy", err);
     }
   };
-
-  useEffect(() => {
-    setPostUrl(Url);
-  }, []);
 
   const shareButtons = [
     { Component: FacebookShareButton, Icon: FacebookIcon, name: "Facebook" },
