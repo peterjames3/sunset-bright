@@ -7,10 +7,10 @@ import {
   AnimatePresence,
   useMotionValue,
   useSpring,
-} from 'motion/react';
+} from "motion/react";
 
 export const AnimatedTooltip = ({
-  items,
+  items = [],
 }: {
   items: {
     id: number;
@@ -19,15 +19,10 @@ export const AnimatedTooltip = ({
     image: string;
   }[];
 }) => {
-  if (!items) {
-    console.error("🚨 AnimatedTooltip: items prop is missing!");
-    return null;
-  }
-
+  // All hooks must be called unconditionally at the top level
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const springConfig = { stiffness: 100, damping: 5 };
   const x = useMotionValue(0);
-
   const rotate = useSpring(
     useTransform(x, [-100, 100], [-45, 45]),
     springConfig
@@ -37,15 +32,20 @@ export const AnimatedTooltip = ({
     springConfig
   );
 
-  const handleMouseMove = (event: any) => {
-    const halfWidth = event.target.offsetWidth / 2;
+  const handleMouseMove = (event: React.MouseEvent<HTMLImageElement>) => {
+    const halfWidth = event.currentTarget.offsetWidth / 2;
     x.set(event.nativeEvent.offsetX - halfWidth);
   };
 
+  if (items.length === 0) {
+    console.error("🚨 AnimatedTooltip: items prop is empty!");
+    return null;
+  }
+
   return (
-    <div className="flex items-center gap-2 ">
+    <div className="flex items-center gap-2">
       <div className="flex -space-x-4">
-        {items.slice(0, 6).map((item) => ( // Show only 3 reviews
+        {items.slice(0, 6).map((item) => (
           <div
             className="relative group"
             key={item.id}
@@ -77,8 +77,6 @@ export const AnimatedTooltip = ({
           </div>
         ))}
       </div>
-
-      {/* "30+ Reviews" Indicator */}
       <div className="text-background text-sm font-semibold">
         ⭐ 50+ Satisfied Customers
       </div>
