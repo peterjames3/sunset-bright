@@ -26,14 +26,6 @@ const validate = (value: FormValues) => {
 };
 
 export default function NewsLetter() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: "",
-  });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { notifySuccess, notifyError } = useToast();
   const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID as string;
@@ -41,7 +33,9 @@ export default function NewsLetter() {
   const publicKey = process.env.NEXT_PUBLIC_KEY as string;
 
   const formik = useFormik({
-    initialValues: formData,
+    initialValues: {
+      email: "",
+    },
     validate,
     onSubmit: (values) => {
       setIsSubmitting(true);
