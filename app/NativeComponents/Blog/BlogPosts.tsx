@@ -27,6 +27,14 @@ export default async function BlogPosts() {
     console.log(`Error Fetching Posts: ${error}`);
   }
 
+
+  if (posts.length === 0) {
+    return (
+      <div className="text-meium p-text text-textColor">
+        No Article at the moment try refreshing the page
+      </div>
+    );
+  }
   return (
     <section className=" wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
       {posts.map((post, index) => (

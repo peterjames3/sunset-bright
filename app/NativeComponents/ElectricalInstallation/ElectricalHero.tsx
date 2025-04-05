@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-export default function Hero() {
+export default function ElectricalHero() {
   return (
     <div className="wrapper mt-[5rem] md:mt-[10rem] py-8 md:flex gap-10 min-h-[40rem]">
       <section className="w-full px-0 md:px-2 md:w-1/2 pt-20 md:pt-32 h-full flex flex-col justify-center gap-5 mb-10 ">

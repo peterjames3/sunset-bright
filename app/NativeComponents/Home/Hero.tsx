@@ -52,7 +52,7 @@ export default function Hero() {
     <div className=" relative w-full h-screen md:h-[55rem] flex items-center gap-10 bg-gradient-to-r from-gray-600 to-gray-900">
       <div className="">
         <Image
-          src="/A solar panel installation.jpg"
+          src="/A solar panel installation.webp"
           fill={true}
           style={{ objectFit: "cover" }}
           priority={true}

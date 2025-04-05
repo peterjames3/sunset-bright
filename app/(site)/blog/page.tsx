@@ -1,9 +1,9 @@
-import Hero from "@/app/NativeComponents/Blog/Hero";
+import BlogHero from "@/app/NativeComponents/Blog/BlogHero";
 import BlogPosts from "@/app/NativeComponents/Blog/BlogPosts";
 export default function Blog() {
   return (
     <>
-      <Hero />
+      <BlogHero />
       <BlogPosts />
     </>
   );

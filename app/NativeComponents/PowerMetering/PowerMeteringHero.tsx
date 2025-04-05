@@ -1,7 +1,7 @@
 //import Image from "next/image";
 import { Activity, ChartNoAxesCombined, Blocks } from "lucide-react";
 import Link from "next/link";
-export default function Hero() {
+export default function PowerMeteringHero() {
   const analytics = [
     {
       id: 1,

@@ -1,4 +1,4 @@
-import Hero from "@/app/NativeComponents/CCTVFenceAndAlarm/Hero";
+import CCTvHero from "@/app/NativeComponents/CCTVFenceAndAlarm/CCTvHero";
 import About from "@/app/NativeComponents/CCTVFenceAndAlarm/About";
 import Benefits from "@/app/NativeComponents/CCTVFenceAndAlarm/Benefits";
 import Cctv from "@/app/NativeComponents/CCTVFenceAndAlarm/Cctv";
@@ -9,7 +9,7 @@ import AlarmSystems from "@/app/NativeComponents/CCTVFenceAndAlarm/AlarmSystems"
 export default function PowerMetering() {
   return (
     <>
-      <Hero />
+      <CCTvHero />
       <About />
       <Benefits />
       <Cctv />

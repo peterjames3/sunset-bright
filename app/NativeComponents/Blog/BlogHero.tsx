@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Hero() {
+export default function BlogHero() {
   return (
     <section className="w-full relative bg-gradient-to-r from-gray-600 to-gray-900 h-[32rem]">
       <Image

@@ -1,5 +1,5 @@
 //"use client";
-import Hero from "@/app/NativeComponents/WaterPumps/Hero";
+import WaterPumpsHero from "@/app/NativeComponents/WaterPumps/WaterPumpsHero";
 import Components from "@/app/NativeComponents/WaterPumps/Components";
 import TypesOfWaterpumps from "@/app/NativeComponents/WaterPumps/TypesOfWaterPumps";
 import SolarPumpsComparison from "@/app/NativeComponents/WaterPumps/SolarPumpsComparison";
@@ -8,7 +8,7 @@ import UseCases from "@/app/NativeComponents/WaterPumps/UseCases";
 export default function SolarWaterHeater() {
   return (
     <>
-      <Hero />
+      <WaterPumpsHero />
       <Components />
       <TypesOfWaterpumps />
       <SolarPumpsComparison />
