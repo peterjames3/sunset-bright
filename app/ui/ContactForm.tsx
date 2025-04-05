@@ -46,29 +46,20 @@ const validate = (value: FormValues) => {
   return errors;
 };
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    service: "",
-    message: "",
-  });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { notifySuccess, notifyError } = useToast();
   const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID as string;
   const templateId = process.env.NEXT_PUBLIC_CONTACTUS_TEMPLATE_ID as string;
   const publicKey = process.env.NEXT_PUBLIC_KEY as string;
 
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
   const formik = useFormik({
-    initialValues: formData,
+    initialValues: {
+      name: "",
+      email: "",
+      phone: "",
+      service: "",
+      message: "",
+    },
     validate,
     onSubmit: (values) => {
       setIsSubmitting(true);
@@ -111,7 +102,6 @@ export default function ContactForm() {
             placeholder="Your name"
             value={formik.values.name}
             onChange={formik.handleChange}
-            onBlur={formik.values.handleBlur}
             className="w-full p-3 border rounded-md focus:ring focus:ring-banner"
           />
         </div>
