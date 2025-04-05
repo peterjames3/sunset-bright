@@ -1,5 +1,5 @@
-'use client';
-import { useState, useEffect, useRef } from 'react';
+"use client";
+import { useState, useEffect, useRef } from "react";
 import { Users, Leaf, Clock, Award } from "lucide-react";
 
 interface ImpactsStatProps {
@@ -38,33 +38,42 @@ const stats: ImpactsStatProps[] = [
 
 const Impacts: React.FC = () => {
   return (
-    <div className='wrapper flex flex-col md:flex md:flex-row flex-col gap-10'>
-      <section className='w-full md:w-1/2 flex flex-col items-center justify-center'>
-        <h4 className='headline text-foreground font-semibold'>
+    <div className="wrapper flex flex-col md:flex md:flex-row  gap-10">
+      <section className="w-full md:w-1/2 flex flex-col items-center justify-center">
+        <h4 className="headline text-foreground font-semibold">
           Transforming Lives and Communities Through Solar Power
         </h4>
-        <p className='p-text text-foreground'>
-          As a pioneering force in the green energy sector, we&apos;ve been at the forefront of the transition to clean, renewable power sources. Our mission is simple yet profound: to create a world where energy is not only abundant but also environmentally responsible.
+        <p className="p-text text-foreground">
+          As a pioneering force in the green energy sector, we&apos;ve been at
+          the forefront of the transition to clean, renewable power sources. Our
+          mission is simple yet profound: to create a world where energy is not
+          only abundant but also environmentally responsible.
         </p>
       </section>
-       <section className='w-full md:w-1/2'>
-      {/* Stats Section */}
-      <div className="grid grid-rows-4 gap-3 ">
-        {stats.map((stat, index) => (
-          <ImpactItem key={index} {...stat} />
-        ))}
-      </div>
+      <section className="w-full md:w-1/2">
+        {/* Stats Section */}
+        <div className="grid grid-rows-4 gap-3 ">
+          {stats.map((stat, index) => (
+            <ImpactItem key={index} {...stat} />
+          ))}
+        </div>
       </section>
     </div>
   );
 };
 
-const ImpactItem: React.FC<ImpactsStatProps> = ({ icon, value, suffix, label }) => {
+const ImpactItem: React.FC<ImpactsStatProps> = ({
+  icon,
+  value,
+  suffix,
+  label,
+}) => {
   const [count, setCount] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    const currentElement = elementRef.current; // Store current value in a variable
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -74,13 +83,13 @@ const ImpactItem: React.FC<ImpactsStatProps> = ({ icon, value, suffix, label }) 
       { threshold: 0.1 }
     );
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current);
+    if (currentElement) {
+      observer.observe(currentElement);
     }
 
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
+      if (currentElement) {
+        observer.unobserve(currentElement);
       }
     };
   }, []);
