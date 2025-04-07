@@ -37,17 +37,20 @@ export default function Post({ post }: { post: SanityDocument }) {
           {post.title}
         </li>
       </ul>
-      <div className="w-full grid grid-cols-1 sm:grid-cols-4 gap-6">
+      <div className="w-full grid grid-cols-1 md:grid-cols-4 gap-6">
         {/* Left Social Share - Sticky */}
-        <section className="col-span-1 p-4 h-auto sm:min-h-[30rem] sm:sticky sm:top-0 sm:h-screen overflow-y-auto">
+        <section className="col-span-1 p-4 h-auto md:min-h-[30rem] md:sticky md:top-0 md:h-screen overflow-y-auto">
           <div className="sm:sticky sm:top-26">
             <SocialShare title={post.title} />
           </div>
         </section>
         <section className="col-span-2 p-4 prose prose-xl ">
           <header className=" py-2 flex flex-col  space-y-8">
-            <nav className="font-semibold w-1/3 text-[0.9rem] text-center text-textColor bg-primary  px-6 py-3  transition-all delay-300 hover:bg-transparent ">
-              <Link href="/blog" className=" no-underline">
+            <nav className=" ">
+              <Link
+                href="/blog"
+                className=" no-underline font-semibold w-1/3 text-[0.79] sm:text-[0.9rem] text-center text-textColor bg-primary  px-6 py-3  transition-all delay-300 hover:bg-foreground hover:text-background"
+              >
                 <span className="mr-[0.2rem]"> &larr;</span>
                 Go Back
               </Link>

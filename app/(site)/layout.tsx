@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import "../globals.css";
-
+import { GoogleTagManager } from "@next/third-parties/google";
 import Navbar from "@/app/ui/Navbar";
-import ScrollToTopBtn from '@/app/ui/ScrollToTopBtn';
+import ScrollToTopBtn from "@/app/ui/ScrollToTopBtn";
 import Whatsapp from "@/app/ui/Whatsapp";
-import Footer from  '@/app/ui/Footer';
+import Footer from "@/app/ui/Footer";
 export const metadata: Metadata = {
-  title: "SunsetBright Energy Limited | Leading Solar & Electrical Solutions Provider in Kenya",
-  description: "Your trusted partner for solar installation, maintenance, solar water heating, electrical design, power metering, CCTV, alarms, and fencing solutions in Kenya.",
+  title:
+    "SunsetBright Energy Limited | Leading Solar & Electrical Solutions Provider in Kenya",
+  description:
+    "Your trusted partner for solar installation, maintenance, solar water heating, electrical design, power metering, CCTV, alarms, and fencing solutions in Kenya.",
   keywords: [
     "solar installation Kenya",
     "solar maintenance services",
@@ -27,7 +29,7 @@ export const metadata: Metadata = {
     "CCTV installation",
     "electric fence solutions",
     "alarm systems",
-    "electrical design and maintenance"
+    "electrical design and maintenance",
   ],
   robots: "index, follow",
   openGraph: {
@@ -59,11 +61,9 @@ export const metadata: Metadata = {
         url: "/apple-touch-icon.png",
       },
     ],
-   
   },
   manifest: "/site.webmanifest",
 };
-
 
 export default function RootLayout({
   children,
@@ -72,7 +72,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <GoogleTagManager gtmId="GTM-MSPX2BHZ " />
       <body>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MSPX2BHZ"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          ></iframe>
+        </noscript>
         <Navbar />
         <main>{children}</main>
         <Whatsapp />

@@ -61,7 +61,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="absolute top-[50%] left-1/2 text-center pt-0 md:pt-28 md:text-start transition -translate-x-1/2 -translate-y-1/2  w-full sm:max-w-[600px] md:max-w-[840px] lg:max-w-[64rem] px-5 sm:px-0 text-background gap-3 ">
+      <div className="absolute top-[58%] md:top-[50%] left-1/2 text-center pt-0 md:pt-28 md:text-start transition -translate-x-1/2 -translate-y-1/2  w-full sm:max-w-[600px] md:max-w-[840px] lg:max-w-[64rem] px-5 sm:px-0 text-background gap-3 ">
         <h1 className=" text-3xl sm:text-4xl lg:text-6xl pb-5 font-bold sm:pb-2">
           <span className="font-extrabold underline text-primary ">
             {" "}

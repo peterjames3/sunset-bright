@@ -24,7 +24,7 @@ export default async function RecentPosts() {
           <header className=" text-[0.89rem] sm:text-[0.89] md:text-[1.1rem] font-semibold text-foreground">
             {latestPost.title || "Untitled Post"}
           </header>
-          <footer className="flex justify-between sm:justify-start sm:flex-col md:flex md:flex-row md:justify-between items-center">
+          <footer className="flex  flex-row justify-between items-center">
             <address className="text-textColor/70 font-medium not-italic">
               {latestPost.authorName || "Unknown author"}
             </address>

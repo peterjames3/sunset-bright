@@ -27,10 +27,13 @@ export default async function BlogPosts() {
     console.log(`Error Fetching Posts: ${error}`);
   }
 
-  if(posts.length === 0)
-{
-  return <div className='text-meium p-text text-textColor'>No Article at the moment try refreshing the page</div>
-}
+  if (posts.length === 0) {
+    return (
+      <div className="text-meium p-text text-textColor">
+        No Article at the moment try refreshing the page
+      </div>
+    );
+  }
   return (
     <section className=" wrapper grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
       {posts.slice(0, 3).map((post, index) => (
@@ -41,13 +44,13 @@ export default async function BlogPosts() {
           <figure>
             <Image
               src={
-                builder.image(post.imageURL).width(420).height(200).url() ||
+                builder.image(post.imageURL).width(520).height(200).url() ||
                 "/3d-view-personal-computer-with-vegetation.jpg"
               }
               alt={post.title}
-              width={420}
+              width={520}
               height={200}
-              className="rounded-t-lg"
+              className="rounded-t-lg w-full object-cover"
             />
           </figure>
           <figcaption className="flex flex-col gap-2 p-3">
