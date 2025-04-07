@@ -5,7 +5,7 @@ export default function CompanyLinks() {
     { name: "About Us", link: "/about" },
     { name: "Our Projects", link: "/projects" },
 
-    { name: "Blog", link: "/Blog" },
+    { name: "Blog", link: "/blog" },
   ];
 
   return (

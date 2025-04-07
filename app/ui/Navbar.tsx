@@ -25,7 +25,7 @@ export default function Navbar() {
     { name: "Solar Installers", href: "/solarinstallers" },
     {
       name: "Services",
-      href: "/services/solar-installation",
+      href: "#",
       submenu: [
         { name: "Power Metering", href: "/services/power-metering" },
         {
@@ -38,7 +38,7 @@ export default function Navbar() {
           href: "/services/electrical-installation",
         },
         { name: "Solar Water Pump", href: "/services/solar-water-pump" },
-        
+
         { name: "Solar Water Heating", href: "/services/solar-water-heating" },
         { name: "Electrical Design", href: "/services/electrical-design" },
       ],
