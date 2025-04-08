@@ -221,7 +221,7 @@ export default function ContactForm() {
           type="submit"
           disabled={isSubmitting}
           value="Send"
-          className={`w-full cursor-pointer rounded-md bg-primary p-3  font-medium text-background transition-all delay-300 ${
+          className={`w-full cursor-pointer rounded-md  p-3  font-medium text-background transition-all delay-300 ${
             isSubmitting ? "bg-foreground" : "bg-primary"
           } hover:bg-tertiary`}
         >

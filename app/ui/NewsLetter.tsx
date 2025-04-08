@@ -98,7 +98,7 @@ export default function NewsLetter() {
             type="submit"
             disabled={isSubmitting}
             value="Subscribe"
-            className={`w-full cursor-pointer rounded-md bg-primary px-6 py-[13px]  font-medium text-background transition-all delay-300 ${
+            className={`w-full cursor-pointer rounded-md px-6 py-[13px]  font-medium text-background transition-all delay-300 ${
               isSubmitting ? "bg-foreground" : "bg-primary"
             } hover:bg-tertiary`}
           >
