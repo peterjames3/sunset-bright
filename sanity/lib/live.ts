@@ -3,12 +3,9 @@
 // https://github.com/sanity-io/next-sanity#live-content-api for more information.
 import { defineLive } from "next-sanity";
 import { client } from "./client";
-import type { SanityClient } from "@sanity/client";
-
-const typedClient: SanityClient = client.withConfig({
-  apiVersion: "2023-01-01", // Replace 'vX' with your actual API version
-});
 
 export const { sanityFetch, SanityLive } = defineLive({
-  client: typedClient,
+  client: client.withConfig({
+    apiVersion: "2025-03-05",
+  }),
 });
