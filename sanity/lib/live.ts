@@ -6,7 +6,7 @@ import { client } from "./client";
 import type { SanityClient } from "@sanity/client";
 
 const typedClient: SanityClient = client.withConfig({
-  apiVersion: "v2023-01-01", // Replace 'vX' with your actual API version
+  apiVersion: "2023-01-01", // Replace 'vX' with your actual API version
 });
 
 export const { sanityFetch, SanityLive } = defineLive({
