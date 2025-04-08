@@ -4,8 +4,12 @@
 import { defineLive } from "next-sanity";
 import { client } from "./client";
 
+// Define the config separately
+const configuredClient = client.withConfig({
+  apiVersion: "2025-03-05", // Replace with your actual version
+});
+
 export const { sanityFetch, SanityLive } = defineLive({
-  client: client.withConfig({
-    apiVersion: "2025-03-05",
-  }),
+  // Directly use the configured client, no manual type import or casting
+  client: configuredClient,
 });
