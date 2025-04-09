@@ -1,15 +1,24 @@
-// Querying with "sanityFetch" will keep content automatically updated
-// Before using it, import and render "<SanityLive />" in your layout, see
-// https://github.com/sanity-io/next-sanity#live-content-api for more information.
+// ./sanity/lib/live.ts
 import { defineLive } from "next-sanity";
-import { client } from "./client";
+import { createClient } from "@sanity/client";
 
-// Define the config separately
-const configuredClient = client.withConfig({
-  apiVersion: "2025-03-05", // Replace with your actual version
+// Create a fresh client instance specifically for live queries
+const liveClient = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  apiVersion: "2025-03-05", // Use your current API version
+  useCdn: false, // Required for live preview
+  perspective: "published",
+  token: process.env.SANITY_API_TOKEN, // If using private datasets
 });
 
+// Export the live query utilities
 export const { sanityFetch, SanityLive } = defineLive({
-  // Directly use the configured client, no manual type import or casting
-  client: configuredClient,
+  client: liveClient,
 });
+
+// TypeScript interface for better type safety (optional)
+export interface LiveQueryConfig {
+  client: ReturnType<typeof createClient>;
+  // Add any additional config options you need
+}
