@@ -11,6 +11,7 @@
     "moduleResolution": "node",
     "preserveSymlinks": true,
     "resolveJsonModule": true,
+    "baseUrl": ".",
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
@@ -20,7 +21,9 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@sanity/client": ["node_modules/@sanity/client"],
+      "next-sanity": ["node_modules/next-sanity"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
